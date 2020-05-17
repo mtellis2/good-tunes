@@ -6,8 +6,6 @@ remove: env-remove
 
 precommit: black
 
-# test: test
-
 env-setup:
 	conda env update -f environment.yml
 	source activate goodtunes && python -m ipykernel install --user --name goodtunes
@@ -16,7 +14,4 @@ env-remove:
 	conda env remove -n goodtunes -y
 
 black:
-	black --target-version py38 .
-
-# test:
-# 	pytest --cov-report term-missing --cov-branch --cov=. tests/
+	black --target-version py37 .
